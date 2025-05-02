@@ -1,0 +1,15 @@
+services:
+  furia-bot:
+    build: .
+    container_name: furia_telegram_bot
+
+    env_file:
+      - .env
+
+    volumes:
+      - furia_bot_persistence:/app/furia_bot_data
+
+    restart: unless-stopped
+
+volumes:
+  furia_bot_persistence:
