@@ -3,8 +3,10 @@ services:
     build: .
     container_name: furia_telegram_bot
 
-    env_file:
-      - .env
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SERPER_API_KEY=${SERPER_API_KEY}
 
     volumes:
       - furia_bot_persistence:/app/furia_bot_data
